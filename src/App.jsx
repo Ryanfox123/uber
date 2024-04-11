@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Tax from "./components/Tax";
+import Faq from "./components/Faq";
 
 const emptyValues = {
   earnings: "",
@@ -13,6 +14,21 @@ const defaultErrors = {
   hours: false,
   mileage: false,
 };
+
+const faqs = [
+  {
+    title: "My first title",
+    description: "Description ak,jhd",
+  },
+  {
+    title: "My second title",
+    description: "Description",
+  },
+  {
+    title: "My third title",
+    description: "Description",
+  },
+];
 
 function App() {
   const [values, setValues] = useState(emptyValues);
@@ -205,6 +221,9 @@ function App() {
           netEarnings={localExpenses.netEarnings}
           mileageEarnings={localExpenses.netMiles}
         />
+      </div>
+      <div className="max-w-[700px] mx-auto">
+        <Faq items={faqs} />
       </div>
     </div>
   );
